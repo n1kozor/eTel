@@ -1,6 +1,4 @@
 # methods.py
-from datetime import datetime
-
 from app import db, app
 from app.models import User, BankAccount
 

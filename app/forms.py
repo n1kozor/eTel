@@ -2,10 +2,7 @@
 
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import DataRequired, ValidationError
-from app.models import User
-
-
+from wtforms.validators import DataRequired
 
 
 class LoginForm(FlaskForm):
@@ -13,8 +10,6 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Login')
     remember_me = BooleanField('Remember Me')
-
-
 
 
 class RegistrationForm(FlaskForm):

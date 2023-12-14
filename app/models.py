@@ -1,19 +1,17 @@
 # models.py
 
 from datetime import datetime
-
 from flask_login import UserMixin
-from werkzeug.security import check_password_hash, generate_password_hash
 from app import bcrypt
 from app import db
 
-
 user_bank_accounts = db.Table('user_bank_accounts',
-    db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
-    db.Column('bank_account_id', db.Integer, db.ForeignKey('bank_account.id'), primary_key=True),
-    db.Column('created_at', db.DateTime, default=datetime.now),
-    db.Column('updated_at', db.DateTime, default=datetime.now, onupdate=datetime.now)
-)
+                              db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
+                              db.Column('bank_account_id', db.Integer, db.ForeignKey('bank_account.id'),
+                                        primary_key=True),
+                              db.Column('created_at', db.DateTime, default=datetime.now),
+                              db.Column('updated_at', db.DateTime, default=datetime.now, onupdate=datetime.now)
+                              )
 
 
 class User(UserMixin, db.Model):
@@ -37,7 +35,6 @@ class User(UserMixin, db.Model):
     created_at = db.Column(db.DateTime, default=datetime.now())
     updated_at = db.Column(db.DateTime, default=datetime.now(), onupdate=datetime.now())
 
-
     def set_password(self, password):
         self.password_hash = bcrypt.generate_password_hash(password).decode('utf-8')
 
@@ -53,6 +50,3 @@ class BankAccount(db.Model):
     balance = db.Column(db.Float)
     created_at = db.Column(db.DateTime, default=datetime.now())
     updated_at = db.Column(db.DateTime, default=datetime.now(), onupdate=datetime.now())
-
-
-
