@@ -1,0 +1,20 @@
+eTel/
+│
+├── app/
+│       ├── api / api.py
+│   ├── __init__.py
+│   ├── models.py
+│   ├── forms.py
+│   ├── methods.py
+│   ├── views.py
+│   └── templates/
+│       ├── base.html
+│       ├── index.html
+│       ├── login.html
+│       └── register.html
+│
+├── migrations/
+│
+├── config.py
+├── manage.py
+└── requirements.txt
