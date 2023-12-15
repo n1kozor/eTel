@@ -1060,3 +1060,82 @@ WHERE user.username = %(username_1)s
 2023-12-15 15:43:15,817 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:43:15] "GET /bankaccounts HTTP/1.1" 200 -
 2023-12-15 15:43:23,397 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:43:23] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
 2023-12-15 15:43:23,718 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:43:23] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 16:02:16,596 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 16:02:16,718 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 16:02:17,541 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 16:02:17,543 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 16:06:06,443 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\migrations\\versions\\c20f501b6027_add_relation.py', reloading
+2023-12-15 16:06:06,586 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 16:06:07,449 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 16:06:07,451 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 16:06:08,000 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:06:08] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 16:06:34,320 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 16:06:34,468 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 16:06:35,263 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 16:06:35,264 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 16:06:35,328 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:06:35] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 16:06:35,524 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:06:35] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 16:06:43,597 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 16:06:43,742 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 16:06:44,585 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 16:06:44,587 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 16:06:50,844 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\migrations\\versions\\c20f501b6027_add_relation.py', reloading
+2023-12-15 16:06:50,964 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 16:06:51,811 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 16:06:51,812 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 16:06:51,893 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:06:51] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 16:09:23,676 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:09:23] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 16:16:29,746 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:16:29] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 16:16:37,711 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:16:37] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 16:16:40,082 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:16:40] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 16:16:40,340 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:16:40] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 16:16:41,477 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:16:41] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 16:16:41,790 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:16:41] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 16:16:43,517 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:16:43] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 16:16:43,826 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:16:43] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 16:16:44,464 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:16:44] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 16:16:44,776 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:16:44] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 16:18:30,299 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 16:18:30,421 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 16:18:52,153 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.2.142:5000
+2023-12-15 16:18:52,154 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-12-15 16:18:52,155 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 16:18:52,972 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 16:18:52,974 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 16:19:15,595 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 16:19:15,730 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 16:19:16,595 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 16:19:16,597 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 16:20:18,379 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 16:20:18,496 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 16:20:19,290 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 16:20:19,292 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 16:20:23,700 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:20:23] "[35m[1mGET /transactions HTTP/1.1[0m" 500 -
+2023-12-15 16:20:23,969 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:20:23] "GET /transactions?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-12-15 16:20:24,032 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:20:24] "GET /transactions?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-12-15 16:20:24,045 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:20:24] "GET /transactions?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-12-15 16:20:24,407 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:20:24] "[36mGET /transactions?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 16:20:45,379 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:20:45] "GET /transactions HTTP/1.1" 200 -
+2023-12-15 16:20:56,247 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:20:56] "GET /transactions HTTP/1.1" 200 -
+2023-12-15 16:20:57,120 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:20:57] "GET /transactions HTTP/1.1" 200 -
+2023-12-15 16:21:44,055 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:21:44] "[35m[1mGET /transactions HTTP/1.1[0m" 500 -
+2023-12-15 16:21:44,293 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:21:44] "[36mGET /transactions?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 16:21:44,386 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:21:44] "[36mGET /transactions?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 16:21:44,399 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:21:44] "[36mGET /transactions?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 16:21:44,759 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:21:44] "[36mGET /transactions?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 16:22:00,678 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:22:00] "[35m[1mGET /transactions HTTP/1.1[0m" 500 -
+2023-12-15 16:22:01,011 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:22:01] "[36mGET /transactions?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 16:22:01,012 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:22:01] "[36mGET /transactions?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 16:22:01,277 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:22:01] "[36mGET /transactions?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 16:22:01,341 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:22:01] "[36mGET /transactions?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 16:22:08,170 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:22:08] "GET /transactions HTTP/1.1" 200 -
+2023-12-15 16:22:24,212 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:22:24] "GET /transactions HTTP/1.1" 200 -
+2023-12-15 16:22:51,579 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:22:51] "GET /transactions HTTP/1.1" 200 -
+2023-12-15 16:23:01,970 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:23:01] "GET /transactions HTTP/1.1" 200 -
+2023-12-15 16:35:42,012 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:35:42] "GET /transactions HTTP/1.1" 200 -
+2023-12-15 16:35:42,700 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:35:42] "GET /transactions HTTP/1.1" 200 -
+2023-12-15 16:36:45,891 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:36:45] "GET /transactions HTTP/1.1" 200 -
+2023-12-15 16:37:17,501 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 16:37:17] "GET /transactions HTTP/1.1" 200 -

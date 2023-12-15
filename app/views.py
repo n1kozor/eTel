@@ -1,16 +1,14 @@
 # views.py
 
-from flask import render_template, flash, redirect, url_for, session, jsonify
+from flask import render_template, flash, redirect, url_for, session
 from flask_login import current_user, login_user, LoginManager, logout_user, login_required
-from app import app, db
+from app import app
 from app.forms import LoginForm
 from app.methods import UserMethods, BankAccountMethods
 from app.models import User
 
-
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
-
 
 
 @login_manager.user_loader
@@ -39,7 +37,6 @@ def login():
     return render_template('login.html', title='Sign In', form=form)
 
 
-
 @app.route('/logout')
 def logout():
     logout_user()
@@ -48,6 +45,7 @@ def logout():
 
 
 from flask import request
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -62,7 +60,8 @@ def register():
         phone = request.form.get('phone')
         gender = request.form.get('gender')
 
-        user = UserMethods.add_user(username, email, password, country, zipcode, city, address, phone, gender, is_active=True, is_admin=False)
+        user = UserMethods.add_user(username, email, password, country, zipcode, city, address, phone, gender,
+                                    is_active=True, is_admin=False)
         print(user)
         if user:
             flash('Registration successful!')
@@ -71,7 +70,6 @@ def register():
             flash('Registration failed. Please try again.')
 
     return render_template('register.html', title='Register')
-
 
 
 @app.route('/dashboard', methods=['GET', 'POST'])
@@ -101,6 +99,7 @@ def profile():
 
     return render_template('profile.html', title='Profile', user=current_user)
 
+
 @app.route('/bankaccounts', methods=['GET', 'POST', 'DELETE'])
 @login_required
 def bankaccounts():
@@ -127,6 +126,9 @@ def bankaccounts():
             return redirect(url_for('bankaccounts'))
     return render_template('bankaccounts.html', title='Bank Accounts', sum=sum)
 
+@app.route('/transactions', methods=['GET', 'POST'])
+@login_required
+def transactions():
 
 
-
+    return render_template('transactions.html', title='Transactions')

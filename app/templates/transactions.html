@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Kezdőlap{% endblock %}
+
+{% block content %}
+<h1>{{ current_user.username }} tranzakciók</h1>
+
+{% for bankaccounts in current_user.bank_accounts %}
+    {% if bankaccounts.is_active %}
+        <h2>Bank neve: {{ bankaccounts.bank_name }}</h2>
+        <p>Számlaszám: {{ bankaccounts.account_number }}</p>
+
+        <table>
+            <tr>
+                <th>Tranzakció típusa</th>
+                <th>Tranzakció összege</th>
+                <th>Tranzakció dátuma</th>
+            </tr>
+
+            {% for transaction in bankaccounts.transactions %}
+                <tr>
+                    <td>{{ transaction.transaction_type }}</td>
+                    <td>{{ transaction.description }}</td>
+                    <td>{{ transaction.amount }}</td>
+                    <td>{{ transaction.created_at }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+{% endfor %}
+{% endblock %}

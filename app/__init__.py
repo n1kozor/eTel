@@ -13,12 +13,9 @@ migrate = Migrate(app, db)
 
 bcrypt = Bcrypt()
 
-
 logging.basicConfig(
     filename='record.log',
     level=logging.DEBUG,
-    format='%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s'
-)
-
+    format='%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 
 from app import models, views
