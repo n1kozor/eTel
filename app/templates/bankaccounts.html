@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Bankszámlák{% endblock %}
+
+{% block content %}
+<div>
+    <form method="POST">
+        <h2>Bankszámla hozzádása {{ current_user.username}} profiljához</h2>
+        <label for="bank_name">Bank neve:</label>
+        <input type="text" name="bank_name" required><br>
+
+        <label for="account_number">Számlaszám:</label>
+        <input type="text" name="account_number" required><br>
+
+        <label for="balance">Egyenleg:</label>
+        <input type="text" name="balance" required><br>
+
+        <label for="account_type">Számla típusa:</label>
+        <input type="text" name="account_type" required><br>
+
+        <input type="submit" value="Számla hozzádása">
+    </form>
+</div>
+
+
+
+
+<h2>Aktív Bankszámlák</h2>
+
+{% for bankaccount in current_user.bank_accounts %}
+    <div>
+        {% if bankaccount.is_active %}
+            <h3>Bank neve: {{ bankaccount.bank_name }}</h3>
+            <p>Számlaszám {{ bankaccount.account_number }}</p>
+            <p>Egyenleg: {{ bankaccount.balance }}</p>
+            <p>Számla típusa: {{ bankaccount.account_type }}</p>
+            <p>Hozzádás dátuma: {{ bankaccount.created_at }}</p>
+            <p>Frissítés / Változtás dátuma: {{ bankaccount.updated_at }}</p>
+            <form method="POST">
+                <input type="hidden" name="bank_account_id" value="{{ bankaccount.id }}">
+                <input type="hidden" name="deactivate" value="1">
+                <input type="submit" value="Számla deaktiválása">
+            </form>
+        {% endif %}
+    </div>
+{% endfor %}
+
+
+    <h2>Inkatív Bankszámlák</h2>
+{% for bankaccount in current_user.bank_accounts %}
+    {% if bankaccount.is_active == False %}
+            <h3>Bank neve: {{ bankaccount.bank_name }}</h3>
+            <p>Számlaszám {{ bankaccount.account_number }}</p>
+            <p>Egyenleg: {{ bankaccount.balance }}</p>
+            <p>Számla típusa: {{ bankaccount.account_type }}</p>
+            <p>Hozzádás dátuma: {{ bankaccount.created_at }}</p>
+            <p>Frissítés / Változtás dátuma: {{ bankaccount.updated_at }}</p>
+            <form method="POST">
+                <input type="hidden" name="bank_account_id" value="{{ bankaccount.id }}">
+                <input type="hidden" name="activate" value="1">
+                <input type="submit" value="Számla aktiválása">
+            </form>
+    {% endif %}
+{% endfor %}
+<div>
+
+
+<div>
+    <h2>Összesített egyenleg</h2>
+    {{ sum }}
+</div>
+
+
+{% endblock %}

@@ -3,26 +3,38 @@
 {% block title %}Regisztráció{% endblock %}
 
 {% block content %}
-<h2>Regisztráció</h2>
+<h1>Regisztráció</h1>
 <form method="post">
-    {{ form.hidden_tag() }}
-    <p>
-        {{ form.username.label }}<br>
-        {{ form.username(size=32) }}
-    </p>
-    <p>
-        {{ form.email.label }}<br>
-        {{ form.email(size=32) }}
-    </p>
-    <p>
-        {{ form.password.label }}<br>
-        {{ form.password(size=32) }}
-    </p>
-    <p>
-        {{ form.password2.label }}<br>
-        {{ form.password2(size=32) }}
-    </p>
+    <label for="username">Felhasználónév:</label>
+    <input type="text" id="username" name="username" required><br><br>
 
-    <p>{{ form.submit() }}</p>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="password">Jelszó:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <label for="country">Ország:</label>
+    <input type="text" id="country" name="country"><br><br>
+
+    <label for="zipcode">Irányítószám:</label>
+    <input type="text" id="zipcode" name="zipcode"><br><br>
+
+    <label for="city">Város:</label>
+    <input type="text" id="city" name="city"><br><br>
+
+    <label for="address">Cím:</label>
+    <input type="text" id="address" name="address"><br><br>
+
+    <label for="phone">Telefonszám:</label>
+    <input type="text" id="phone" name="phone"><br><br>
+
+    <label for="gender">Nem:</label>
+    <input type="text" id="gender" name="gender"><br><br>
+
+
+    <input type="submit" value="Regisztráció">
 </form>
+
+
 {% endblock %}

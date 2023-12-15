@@ -1,6 +1,6 @@
 # methods.py
 from app import db, app
-from app.models import User, BankAccount
+from app.models import User, BankAccount, Transaction
 
 
 class UserMethods:
@@ -46,20 +46,23 @@ class UserMethods:
             return None
 
     @staticmethod
-    def update_user(user_id, **kwargs):
+    def update_user(user, **kwargs):
         try:
-            user = User.query.get(user_id)
-            if user:
-                for key, value in kwargs.items():
-                    if hasattr(user, key):
-                        setattr(user, key, value)
-                user.updated_at = db.func.current_timestamp()
-                db.session.commit()
-                return user
-            return None
+            if not user:
+                return False
+
+            for key, value in kwargs.items():
+                if hasattr(user, key) and value is not None:
+                    setattr(user, key, value)
+                    if key == 'password_hash':
+                        user.set_password(value)
+
+            db.session.commit()
+            return True
         except Exception as e:
             app.logger.error(e)
-            return None
+            return False
+
 
     @staticmethod
     def delete_user(user_id):
@@ -139,18 +142,17 @@ class UserMethods:
             app.logger.error(e)
             return False
 
-
-
 class BankAccountMethods:
     @staticmethod
-    def add_bank_account(bank_name, account_number, account_type, balance, user):
+    def add(bank_name, account_number, account_type, balance, user):
         try:
             if user:
                 new_bank_account = BankAccount(
                     bank_name=bank_name,
                     account_number=account_number,
                     account_type=account_type,
-                    balance=balance
+                    balance=balance,
+                    is_active=True
                 )
                 user.bank_accounts.append(new_bank_account)
                 db.session.add(new_bank_account)
@@ -162,7 +164,7 @@ class BankAccountMethods:
             return None
 
     @staticmethod
-    def get_all_bank_accounts():
+    def get_all():
         try:
             return BankAccount.query.all()
         except Exception as e:
@@ -170,14 +172,14 @@ class BankAccountMethods:
             return None
 
     @staticmethod
-    def get_bank_accounts_by_user(user):
+    def get_by_user(user):
         try:
             return user.bank_accounts
         except Exception as e:
             app.logger.error(e)
             return None
     @staticmethod
-    def get_bank_account_by_id(bank_account_id):
+    def get_by_id(bank_account_id):
         try:
             return BankAccount.query.filter_by(id=bank_account_id).first()
         except Exception as e:
@@ -185,26 +187,21 @@ class BankAccountMethods:
             return None
 
     @staticmethod
-    def update_bank_account(bank_account_id, user=None, **kwargs):
+    def update(bank_account, user=None, **kwargs):
         try:
-            bank_account = BankAccount.query.get(bank_account_id)
             if bank_account:
-                # Frissíti a BankAccount attribútumait
                 for key, value in kwargs.items():
                     if hasattr(bank_account, key):
                         setattr(bank_account, key, value)
 
-                # Frissíti a felhasználókat, ha user_ids meg van adva
                 if user is not None:
                     current_users = set(bank_account.users)
                     new_users = set(UserMethods.get_user_by_id(uid) for uid in user.id)
 
-                    # Új felhasználók hozzáadása
                     for user in new_users - current_users:
                         if user:
                             bank_account.users.append(user)
 
-                    # Eltávolítja azokat a felhasználókat, akik már nem szerepelnek a listában
                     for user in current_users - new_users:
                         if user:
                             bank_account.users.remove(user)
@@ -217,19 +214,33 @@ class BankAccountMethods:
             app.logger.error(e)
             return None
 
+    # set inactive
     @staticmethod
-    def delete_bank_account(bank_account_id):
+    def set_inactive(bank_account_id):
         try:
-            bank_account = BankAccount.query.get(bank_account_id)
+            bank_account = BankAccount.query.filter_by(id=bank_account_id).first()
             if bank_account:
-                db.session.delete(bank_account)
+                bank_account.is_active = False
                 db.session.commit()
                 return True
             return False
         except Exception as e:
+            print(e)
             app.logger.error(e)
             return False
-
+    @staticmethod
+    def set_active(bank_account_id):
+        try:
+            bank_account = BankAccount.query.filter_by(id=bank_account_id).first()
+            if bank_account:
+                bank_account.is_active = True
+                db.session.commit()
+                return True
+            return False
+        except Exception as e:
+            print(e)
+            app.logger.error(e)
+            return False
     @staticmethod
     def add_user_to_bank_account(user, bank_account):
         try:
@@ -243,7 +254,7 @@ class BankAccountMethods:
             return False
 
     @staticmethod
-    def change_bank_account_balance(bank_account_id, balance):
+    def change_balance(bank_account_id, balance):
         try:
             bank_account = BankAccountMethods.get_bank_account_by_id(bank_account_id)
             if bank_account:
@@ -290,16 +301,91 @@ class BankAccountMethods:
             app.logger.error(e)
             return False
 
+    # Sum all bank account balances
+    @staticmethod
+    def sum_all():
+        try:
+            return db.session.query(db.func.sum(BankAccount.balance)).scalar()
+        except Exception as e:
+            app.logger.error(e)
+            return None
 
-with app.app_context():
+class TransactionMethods:
+    @staticmethod
+    def add(bank_account, amount, transaction_type, description):
+        try:
+            print("asdasd")
+            if bank_account:
+                new_transaction = Transaction(
+                    bank_account=bank_account,
+                    amount=amount,
+                    transaction_type=transaction_type,
+                    description=description
+                )
+                db.session.add(new_transaction)
+                db.session.commit()
+                return new_transaction
+            return None
+        except Exception as e:
+            app.logger.error(e)
+            return None
 
-    user = UserMethods.get_user_by_username("asd")
-    account = BankAccountMethods.get_bank_account_by_id(1)
+    @staticmethod
+    def get_all():
+        try:
+            return Transaction.query.all()
+        except Exception as e:
+            app.logger.error(e)
+            return None
 
-    print(account.balance)
+    @staticmethod
+    def get_by_bank_account(bank_account):
+        try:
+            return bank_account.transactions
+        except Exception as e:
+            app.logger.error(e)
+            return None
 
-    BankAccountMethods.deposit(account, 255.14)
-    print(account.balance)
+    @staticmethod
+    def get_by_id(transaction_id):
+        try:
+            return Transaction.query.get(transaction_id)
+        except Exception as e:
+            app.logger.error(e)
+            return None
+
+    @staticmethod
+    def update(transaction_id, **kwargs):
+        try:
+            transaction = Transaction.query.get(transaction_id)
+            if transaction:
+                for key, value in kwargs.items():
+                    if hasattr(transaction, key):
+                        setattr(transaction, key, value)
+                db.session.commit()
+                return transaction
+            return None
+        except Exception as e:
+            app.logger.error(e)
+            return None
+
+    @staticmethod
+    def delete(transaction):
+        try:
+            if transaction:
+                db.session.delete(transaction)
+                db.session.commit()
+                return True
+            return False
+        except Exception as e:
+            app.logger.error(e)
+            return False
+
+# with app.app_context():
+#     bankaccount = BankAccountMethods.get_bank_account_by_id(1)
+#     print(bankaccount.balance)
+#     TransactionMethods.add_transaction(bankaccount, 1000, 'deposit', 'Deposit 1000')
+
 
 
 

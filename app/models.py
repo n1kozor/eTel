@@ -48,5 +48,19 @@ class BankAccount(db.Model):
     account_number = db.Column(db.Integer)
     account_type = db.Column(db.String(100))
     balance = db.Column(db.Float)
+    is_active = db.Column(db.Boolean)
     created_at = db.Column(db.DateTime, default=datetime.now())
     updated_at = db.Column(db.DateTime, default=datetime.now(), onupdate=datetime.now())
+
+
+class Transaction(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    bank_account_id = db.Column(db.Integer, db.ForeignKey('bank_account.id'), nullable=False)
+    amount = db.Column(db.Float, nullable=False)
+    transaction_type = db.Column(db.String(100))  # e.g., 'deposit', 'withdrawal'
+    description = db.Column(db.String(255))
+    created_at = db.Column(db.DateTime, default=datetime.now())
+    updated_at = db.Column(db.DateTime, default=datetime.now(), onupdate=datetime.now())
+    bank_account = db.relationship('BankAccount', backref=db.backref('transactions', lazy=True))
+
+

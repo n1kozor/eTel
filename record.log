@@ -227,3 +227,836 @@
 2023-12-14 15:12:49,827 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [14/Dec/2023 15:12:49] "GET /register HTTP/1.1" 200 -
 2023-12-14 15:12:55,080 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [14/Dec/2023 15:12:55] "POST /register HTTP/1.1" 200 -
 2023-12-14 15:13:21,526 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [14/Dec/2023 15:13:21] "POST /register HTTP/1.1" 200 -
+2023-12-15 09:13:35,753 INFO werkzeug Thread-6 (process_request_thread) : 192.168.2.142 - - [15/Dec/2023 09:13:35] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2023-12-15 09:13:35,786 ERROR werkzeug Thread-6 (process_request_thread) : Error on request:
+Traceback (most recent call last):
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\flask\app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\flask\app.py", line 1458, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\app\views.py", line 24, in index
+    return render_template('index.html', title='Home')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\jinja2\environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\jinja2\environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\werkzeug\debug\__init__.py", line 365, in debug_application
+    environ["wsgi.errors"].write("".join(tb.render_traceback_text()))
+OSError: [Errno 22] Invalid argument
+2023-12-15 09:13:35,839 INFO werkzeug Thread-7 (process_request_thread) : 192.168.2.142 - - [15/Dec/2023 09:13:35] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-12-15 09:13:35,844 INFO werkzeug Thread-8 (process_request_thread) : 192.168.2.142 - - [15/Dec/2023 09:13:35] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-12-15 09:13:35,882 INFO werkzeug Thread-9 (process_request_thread) : 192.168.2.142 - - [15/Dec/2023 09:13:35] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-12-15 09:13:35,931 INFO werkzeug Thread-10 (process_request_thread) : 192.168.2.142 - - [15/Dec/2023 09:13:35] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 09:13:38,921 INFO werkzeug Thread-11 (process_request_thread) : 192.168.2.142 - - [15/Dec/2023 09:13:38] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2023-12-15 09:13:38,924 ERROR werkzeug Thread-11 (process_request_thread) : Error on request:
+Traceback (most recent call last):
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\flask\app.py", line 1478, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\flask\app.py", line 1458, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\app\views.py", line 24, in index
+    return render_template('index.html', title='Home')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\jinja2\environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\jinja2\environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+  File "C:\Users\aba\PycharmProjects\eTel\.venv\Lib\site-packages\werkzeug\debug\__init__.py", line 365, in debug_application
+    environ["wsgi.errors"].write("".join(tb.render_traceback_text()))
+OSError: [Errno 22] Invalid argument
+2023-12-15 09:13:38,946 INFO werkzeug Thread-12 (process_request_thread) : 192.168.2.142 - - [15/Dec/2023 09:13:38] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 09:13:38,947 INFO werkzeug Thread-13 (process_request_thread) : 192.168.2.142 - - [15/Dec/2023 09:13:38] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 09:13:38,961 INFO werkzeug Thread-14 (process_request_thread) : 192.168.2.142 - - [15/Dec/2023 09:13:38] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 09:13:39,010 INFO werkzeug Thread-15 (process_request_thread) : 192.168.2.142 - - [15/Dec/2023 09:13:39] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 10:58:39,004 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.2.142:5000
+2023-12-15 10:58:39,004 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-12-15 10:58:39,006 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 10:58:39,784 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 10:58:39,786 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 10:58:43,963 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 10:58:43] "GET /login HTTP/1.1" 200 -
+2023-12-15 10:58:44,223 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 10:58:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-12-15 10:58:46,858 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 10:58:46] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-12-15 10:58:47,172 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 10:58:47] "GET /dashboard HTTP/1.1" 200 -
+2023-12-15 10:58:48,489 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 10:58:48] "[32mGET /logout HTTP/1.1[0m" 302 -
+2023-12-15 10:58:48,800 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 10:58:48] "GET /login HTTP/1.1" 200 -
+2023-12-15 11:00:17,637 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 11:00:17,755 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 11:00:18,709 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 11:00:18,711 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 11:04:19,996 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\forms.py', reloading
+2023-12-15 11:04:20,139 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 11:04:21,008 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 11:04:21,010 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 11:06:58,015 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 11:06:58,152 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 11:06:59,053 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 11:06:59,055 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 11:07:54,142 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:07:54] "GET /login HTTP/1.1" 200 -
+2023-12-15 11:07:54,933 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:07:54] "GET /register HTTP/1.1" 200 -
+2023-12-15 11:08:37,665 ERROR app Thread-4 (process_request_thread) : Password must be non-empty.
+2023-12-15 11:08:37,667 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:08:37] "POST /register HTTP/1.1" 200 -
+2023-12-15 11:10:35,860 ERROR app Thread-6 (process_request_thread) : Password must be non-empty.
+2023-12-15 11:10:35,861 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:10:35] "POST /register HTTP/1.1" 200 -
+2023-12-15 11:10:59,744 ERROR app Thread-7 (process_request_thread) : Password must be non-empty.
+2023-12-15 11:10:59,746 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:10:59] "POST /register HTTP/1.1" 200 -
+2023-12-15 11:11:28,985 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 11:11:29,127 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 11:11:30,227 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 11:11:30,228 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 11:11:47,816 ERROR app Thread-2 (process_request_thread) : Password must be non-empty.
+2023-12-15 11:11:47,821 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:11:47] "POST /register HTTP/1.1" 200 -
+2023-12-15 11:12:11,637 ERROR app Thread-3 (process_request_thread) : Password must be non-empty.
+2023-12-15 11:12:11,640 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:12:11] "POST /register HTTP/1.1" 200 -
+2023-12-15 11:12:34,995 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 11:12:35,120 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 11:12:36,002 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 11:12:36,004 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 11:12:36,040 ERROR app Thread-2 (process_request_thread) : Password must be non-empty.
+2023-12-15 11:12:36,046 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:12:36] "POST /register HTTP/1.1" 200 -
+2023-12-15 11:12:47,743 ERROR app Thread-3 (process_request_thread) : Password must be non-empty.
+2023-12-15 11:12:47,745 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:12:47] "POST /register HTTP/1.1" 200 -
+2023-12-15 11:13:23,326 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 11:13:23,452 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 11:13:24,252 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 11:13:24,254 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 11:13:32,038 ERROR app Thread-2 (process_request_thread) : Password must be non-empty.
+2023-12-15 11:13:32,044 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:13:32] "POST /register HTTP/1.1" 200 -
+2023-12-15 11:15:07,932 ERROR app Thread-4 (process_request_thread) : Password must be non-empty.
+2023-12-15 11:15:07,935 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:15:07] "POST /register HTTP/1.1" 200 -
+2023-12-15 11:15:42,914 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:15:42] "[32mPOST /register HTTP/1.1[0m" 302 -
+2023-12-15 11:15:43,234 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:15:43] "GET /login HTTP/1.1" 200 -
+2023-12-15 11:15:50,032 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:15:50] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-12-15 11:15:50,355 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:15:50] "GET /dashboard HTTP/1.1" 200 -
+2023-12-15 11:15:51,721 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:15:51] "[32mGET /logout HTTP/1.1[0m" 302 -
+2023-12-15 11:15:52,032 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:15:52] "GET /login HTTP/1.1" 200 -
+2023-12-15 11:16:42,407 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:16:42] "GET /login HTTP/1.1" 200 -
+2023-12-15 11:16:43,740 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:16:43] "GET /login HTTP/1.1" 200 -
+2023-12-15 11:16:44,008 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:16:44] "GET /login HTTP/1.1" 200 -
+2023-12-15 11:17:16,255 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\forms.py', reloading
+2023-12-15 11:17:16,375 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 11:17:17,242 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 11:17:17,244 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 11:17:17,292 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:17:17] "GET /login HTTP/1.1" 200 -
+2023-12-15 11:17:17,293 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:17:17] "GET /login HTTP/1.1" 200 -
+2023-12-15 11:17:17,787 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:17:17] "GET /login HTTP/1.1" 200 -
+2023-12-15 11:17:20,807 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:17:20] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-12-15 11:17:21,129 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:17:21] "GET /dashboard HTTP/1.1" 200 -
+2023-12-15 11:17:22,655 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:17:22] "[32mGET /logout HTTP/1.1[0m" 302 -
+2023-12-15 11:17:22,969 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:17:22] "GET /login HTTP/1.1" 200 -
+2023-12-15 11:22:33,386 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 11:22:33,532 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 11:22:34,392 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 11:22:34,394 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 11:23:13,120 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:23:13] "GET /login HTTP/1.1" 200 -
+2023-12-15 11:23:16,180 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:23:16] "[32mGET /profile HTTP/1.1[0m" 302 -
+2023-12-15 11:23:16,494 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:23:16] "GET /login?next=/profile HTTP/1.1" 200 -
+2023-12-15 11:23:20,334 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:23:20] "[32mPOST /login?next=/profile HTTP/1.1[0m" 302 -
+2023-12-15 11:23:20,649 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:23:20] "GET /dashboard HTTP/1.1" 200 -
+2023-12-15 11:23:24,545 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:23:24] "GET /profile HTTP/1.1" 200 -
+2023-12-15 11:23:52,104 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:23:52] "[32mPOST /profile HTTP/1.1[0m" 302 -
+2023-12-15 11:23:52,360 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:23:52] "GET /profile HTTP/1.1" 200 -
+2023-12-15 11:24:03,972 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:24:03] "[32mPOST /profile HTTP/1.1[0m" 302 -
+2023-12-15 11:24:04,293 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:24:04] "GET /profile HTTP/1.1" 200 -
+2023-12-15 11:24:35,575 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 11:24:35,756 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 11:24:36,643 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 11:24:36,645 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 11:26:17,310 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 11:26:17,433 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 11:26:18,444 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 11:26:18,447 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 11:30:49,481 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 11:30:49,597 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 11:30:50,438 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 11:30:50,440 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 11:30:59,218 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:30:59] "GET /profile HTTP/1.1" 200 -
+2023-12-15 11:31:03,958 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:31:03] "[32mPOST /profile HTTP/1.1[0m" 302 -
+2023-12-15 11:31:04,279 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:31:04] "GET /profile HTTP/1.1" 200 -
+2023-12-15 11:31:19,714 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:31:19] "[32mGET /logout HTTP/1.1[0m" 302 -
+2023-12-15 11:31:20,028 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:31:20] "GET /login HTTP/1.1" 200 -
+2023-12-15 11:31:22,699 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:31:22] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2023-12-15 11:31:23,072 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:31:23] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 11:31:23,087 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:31:23] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 11:31:23,287 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:31:23] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 11:31:23,428 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:31:23] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 11:32:24,970 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 11:32:25,111 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 11:32:26,023 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 11:32:26,025 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 11:32:32,596 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:32:32] "[32mGET /profile HTTP/1.1[0m" 302 -
+2023-12-15 11:32:32,854 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:32:32] "GET /login?next=/profile HTTP/1.1" 200 -
+2023-12-15 11:32:36,795 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:32:36] "[35m[1mPOST /login?next=/profile HTTP/1.1[0m" 500 -
+2023-12-15 11:32:37,177 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:32:37] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 11:32:37,189 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:32:37] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 11:32:37,383 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:32:37] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 11:32:37,508 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:32:37] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 11:32:44,254 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:32:44] "[35m[1mPOST /login?next=/profile HTTP/1.1[0m" 500 -
+2023-12-15 11:32:44,584 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:32:44] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 11:32:44,586 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:32:44] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 11:32:44,849 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:32:44] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 11:32:44,911 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:32:44] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 11:32:50,856 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:32:50] "POST /login?next=/profile HTTP/1.1" 200 -
+2023-12-15 11:33:37,929 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 11:33:38,066 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 11:33:39,170 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 11:33:39,171 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 11:33:43,885 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:33:43] "[32mPOST /login?next=/profile HTTP/1.1[0m" 302 -
+2023-12-15 11:33:43,951 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:33:43] "GET /dashboard HTTP/1.1" 200 -
+2023-12-15 11:33:47,810 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:33:47] "GET /profile HTTP/1.1" 200 -
+2023-12-15 11:34:00,522 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:34:00] "[32mPOST /profile HTTP/1.1[0m" 302 -
+2023-12-15 11:34:00,581 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:34:00] "GET /profile HTTP/1.1" 200 -
+2023-12-15 11:34:07,244 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:34:07] "[32mGET /logout HTTP/1.1[0m" 302 -
+2023-12-15 11:34:07,569 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:34:07] "GET /login HTTP/1.1" 200 -
+2023-12-15 11:34:11,956 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:34:11] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-12-15 11:34:12,270 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 11:34:12] "GET /dashboard HTTP/1.1" 200 -
+2023-12-15 12:03:07,483 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 12:03:07] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-12-15 12:03:07,745 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 12:03:07] "GET /dashboard HTTP/1.1" 200 -
+2023-12-15 12:03:09,075 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 12:03:09] "[32mGET /logout HTTP/1.1[0m" 302 -
+2023-12-15 12:03:09,394 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 12:03:09] "GET /login HTTP/1.1" 200 -
+2023-12-15 12:50:25,007 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 12:50:25,159 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 12:50:26,285 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 12:50:26,286 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 12:51:26,677 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.2.142:5000
+2023-12-15 12:51:26,678 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-12-15 12:51:26,680 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 12:51:27,749 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 12:51:27,751 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 12:51:42,958 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 12:51:42] "[33mGET /api/user HTTP/1.1[0m" 404 -
+2023-12-15 12:51:47,460 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 12:51:47] "[35m[1mGET /api/users HTTP/1.1[0m" 500 -
+2023-12-15 12:51:47,832 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 12:51:47] "GET /api/users?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-12-15 12:51:47,839 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 12:51:47] "GET /api/users?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-12-15 12:51:48,047 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 12:51:48] "GET /api/users?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-12-15 12:51:48,170 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 12:51:48] "[36mGET /api/users?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 12:51:53,466 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 12:51:53,599 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 12:51:54,650 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 12:51:54,652 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 12:51:54,685 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 12:51:54] "GET /api/users HTTP/1.1" 200 -
+2023-12-15 12:52:36,858 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 12:52:37,002 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 12:52:38,059 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 12:52:38,061 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 12:52:39,379 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 12:52:39] "[33mGET /api/users HTTP/1.1[0m" 404 -
+2023-12-15 12:52:41,670 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 12:52:41] "[35m[1mGET /api/users/1 HTTP/1.1[0m" 500 -
+2023-12-15 12:52:42,040 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 12:52:42] "GET /api/users/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-12-15 12:52:42,052 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 12:52:42] "GET /api/users/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-12-15 12:52:42,253 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 12:52:42] "GET /api/users/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-12-15 12:52:42,377 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 12:52:42] "[36mGET /api/users/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 12:53:03,792 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 12:53:04,023 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 12:53:05,174 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 12:53:05,175 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 12:53:05,304 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 12:53:05] "GET /api/users/1 HTTP/1.1" 200 -
+2023-12-15 12:53:13,070 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 12:53:13] "GET /api/users/2 HTTP/1.1" 200 -
+2023-12-15 12:55:56,686 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 12:55:56,806 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 12:55:57,919 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 12:55:57,921 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 13:14:00,850 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:14:00] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2023-12-15 13:14:01,097 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:14:01] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-12-15 13:14:01,176 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:14:01] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-12-15 13:14:01,191 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:14:01] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 13:14:01,553 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:14:01] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 13:14:15,149 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:14:15] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2023-12-15 13:14:15,220 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 13:14:15,342 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 13:14:16,434 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 13:14:16,436 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 13:14:16,502 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:14:16] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 13:14:16,510 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:14:16] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 13:14:16,522 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:14:16] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 13:14:16,873 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:14:16] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 13:14:17,669 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:14:17] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2023-12-15 13:14:17,996 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:14:17] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 13:14:17,997 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:14:17] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 13:14:18,258 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:14:18] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 13:14:18,322 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:14:18] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 13:14:19,057 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:14:19] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2023-12-15 13:14:19,397 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:14:19] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 13:14:19,398 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:14:19] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 13:14:19,664 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:14:19] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 13:14:19,709 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:14:19] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 13:15:02,699 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 13:15:02,816 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 13:15:03,887 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 13:15:03,889 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 13:15:05,536 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:15:05] "[32mGET /logout HTTP/1.1[0m" 302 -
+2023-12-15 13:15:05,804 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:15:05] "GET /login HTTP/1.1" 200 -
+2023-12-15 13:15:07,456 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:15:07] "GET /login HTTP/1.1" 200 -
+2023-12-15 13:15:10,341 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:15:10] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-12-15 13:15:10,399 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:15:10] "GET /login HTTP/1.1" 200 -
+2023-12-15 13:15:14,285 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:15:14] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-12-15 13:15:14,598 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:15:14] "GET /dashboard HTTP/1.1" 200 -
+2023-12-15 13:15:15,652 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:15:15] "[32mGET /logout HTTP/1.1[0m" 302 -
+2023-12-15 13:15:15,969 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:15:15] "GET /login HTTP/1.1" 200 -
+2023-12-15 13:15:19,779 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:15:19] "[32mGET /profile HTTP/1.1[0m" 302 -
+2023-12-15 13:15:20,088 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:15:20] "GET /login?next=/profile HTTP/1.1" 200 -
+2023-12-15 13:15:25,139 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:15:25] "[32mPOST /login?next=/profile HTTP/1.1[0m" 302 -
+2023-12-15 13:15:25,452 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:15:25] "GET /dashboard HTTP/1.1" 200 -
+2023-12-15 13:15:28,209 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:15:28] "GET /profile HTTP/1.1" 200 -
+2023-12-15 13:18:52,763 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\models.py', reloading
+2023-12-15 13:18:52,884 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 13:18:53,905 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 13:18:53,906 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 13:19:09,345 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\models.py', reloading
+2023-12-15 13:19:09,474 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 13:19:10,303 ERROR app MainThread : Error creating backref 'bank_account' on relationship 'BankAccount.transactions': property of that name exists on mapper 'Mapper[Transaction(transaction)]'
+2023-12-15 13:19:10,311 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 13:19:10,313 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 13:19:37,290 ERROR app MainThread : Error creating backref 'bank_account' on relationship 'BankAccount.transactions': property of that name exists on mapper 'Mapper[Transaction(transaction)]'
+2023-12-15 13:19:38,066 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\migrations\\env.py', reloading
+2023-12-15 13:19:38,183 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 13:19:38,958 ERROR app MainThread : Error creating backref 'bank_account' on relationship 'BankAccount.transactions': property of that name exists on mapper 'Mapper[Transaction(transaction)]'
+2023-12-15 13:19:38,965 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 13:19:38,967 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 13:19:40,567 ERROR app MainThread : Error creating backref 'bank_account' on relationship 'BankAccount.transactions': property of that name exists on mapper 'Mapper[Transaction(transaction)]'
+2023-12-15 13:19:44,410 ERROR app MainThread : Error creating backref 'bank_account' on relationship 'BankAccount.transactions': property of that name exists on mapper 'Mapper[Transaction(transaction)]'
+2023-12-15 13:19:49,433 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:19:49] "[35m[1mGET /register HTTP/1.1[0m" 500 -
+2023-12-15 13:19:49,639 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:19:49] "GET /register?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-12-15 13:19:49,765 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:19:49] "GET /register?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-12-15 13:19:49,784 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:19:49] "GET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-12-15 13:19:50,157 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:19:50] "[36mGET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 13:19:52,380 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:19:52] "[35m[1mGET /register HTTP/1.1[0m" 500 -
+2023-12-15 13:19:52,713 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:19:52] "[36mGET /register?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 13:19:52,714 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:19:52] "[36mGET /register?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 13:19:52,976 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:19:52] "[36mGET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 13:19:53,039 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:19:53] "[36mGET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 13:19:53,725 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:19:53] "[35m[1mGET /register HTTP/1.1[0m" 500 -
+2023-12-15 13:19:54,070 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:19:54] "[36mGET /register?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 13:19:54,070 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:19:54] "[36mGET /register?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 13:19:54,336 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:19:54] "[36mGET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 13:19:54,398 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:19:54] "[36mGET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 13:21:18,281 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:21:18] "[35m[1mGET /profile HTTP/1.1[0m" 500 -
+2023-12-15 13:21:18,508 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:21:18] "GET /profile?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-12-15 13:21:18,607 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:21:18] "GET /profile?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-12-15 13:21:18,624 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:21:18] "GET /profile?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-12-15 13:21:18,997 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:21:18] "[36mGET /profile?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 13:21:19,601 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:21:19] "[35m[1mGET /profile HTTP/1.1[0m" 500 -
+2023-12-15 13:21:19,948 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:21:19] "[36mGET /profile?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 13:21:19,948 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:21:19] "[36mGET /profile?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 13:21:20,209 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:21:20] "[36mGET /profile?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 13:21:20,272 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:21:20] "[36mGET /profile?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 13:22:11,803 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\models.py', reloading
+2023-12-15 13:22:11,934 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 13:22:12,803 ERROR app MainThread : (pymysql.err.ProgrammingError) (1146, "Table 'etel.user' doesn't exist")
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.country AS user_country, user.zipcode AS user_zipcode, user.city AS user_city, user.address AS user_address, user.phone AS user_phone, user.gender AS user_gender, user.is_active AS user_is_active, user.is_admin AS user_is_admin, user.created_at AS user_created_at, user.updated_at AS user_updated_at 
+FROM user 
+WHERE user.username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'admin', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2023-12-15 13:22:12,809 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 13:22:12,812 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 13:23:57,699 ERROR app MainThread : (pymysql.err.ProgrammingError) (1146, "Table 'etel.user' doesn't exist")
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.country AS user_country, user.zipcode AS user_zipcode, user.city AS user_city, user.address AS user_address, user.phone AS user_phone, user.gender AS user_gender, user.is_active AS user_is_active, user.is_admin AS user_is_admin, user.created_at AS user_created_at, user.updated_at AS user_updated_at 
+FROM user 
+WHERE user.username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'admin', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2023-12-15 13:24:00,267 ERROR app MainThread : (pymysql.err.ProgrammingError) (1146, "Table 'etel.user' doesn't exist")
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.country AS user_country, user.zipcode AS user_zipcode, user.city AS user_city, user.address AS user_address, user.phone AS user_phone, user.gender AS user_gender, user.is_active AS user_is_active, user.is_admin AS user_is_admin, user.created_at AS user_created_at, user.updated_at AS user_updated_at 
+FROM user 
+WHERE user.username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'admin', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2023-12-15 13:24:02,671 ERROR app MainThread : (pymysql.err.ProgrammingError) (1146, "Table 'etel.user' doesn't exist")
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.country AS user_country, user.zipcode AS user_zipcode, user.city AS user_city, user.address AS user_address, user.phone AS user_phone, user.gender AS user_gender, user.is_active AS user_is_active, user.is_admin AS user_is_admin, user.created_at AS user_created_at, user.updated_at AS user_updated_at 
+FROM user 
+WHERE user.username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'admin', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2023-12-15 13:24:05,065 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:24:05] "GET /register HTTP/1.1" 200 -
+2023-12-15 13:24:22,327 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:24:22] "[32mPOST /register HTTP/1.1[0m" 302 -
+2023-12-15 13:24:22,644 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:24:22] "GET /login HTTP/1.1" 200 -
+2023-12-15 13:24:25,878 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:24:25] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-12-15 13:24:26,199 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:24:26] "GET /dashboard HTTP/1.1" 200 -
+2023-12-15 13:26:51,097 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 13:26:51,277 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 13:26:52,384 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 13:26:52,386 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 13:28:48,356 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 13:28:48,490 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 13:28:49,563 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 13:28:49,564 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 13:28:50,682 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:28:50] "GET /dashboard HTTP/1.1" 200 -
+2023-12-15 13:28:53,280 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:28:53] "GET /profile HTTP/1.1" 200 -
+2023-12-15 13:28:55,886 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:28:55] "GET /profile HTTP/1.1" 200 -
+2023-12-15 13:29:04,844 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:29:04] "[32mPOST /profile HTTP/1.1[0m" 302 -
+2023-12-15 13:29:05,155 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:29:05] "GET /profile HTTP/1.1" 200 -
+2023-12-15 13:29:29,331 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:29:29] "[32mPOST /profile HTTP/1.1[0m" 302 -
+2023-12-15 13:29:29,643 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:29:29] "GET /profile HTTP/1.1" 200 -
+2023-12-15 13:31:24,625 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 13:31:24,748 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 13:37:51,095 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.2.142:5000
+2023-12-15 13:37:51,096 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-12-15 13:37:51,098 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 13:37:51,936 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 13:37:51,939 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 13:38:24,131 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.2.142:5000
+2023-12-15 13:38:24,132 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-12-15 13:38:24,133 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 13:38:24,877 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 13:38:24,880 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 13:38:39,269 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 13:38:39,391 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 13:38:40,168 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 13:38:40,169 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 13:39:06,868 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 13:39:06,985 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 13:39:07,846 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 13:39:07,847 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 13:39:09,375 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:39:09] "[32mPOST /profile HTTP/1.1[0m" 302 -
+2023-12-15 13:39:09,417 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:39:09] "GET /profile HTTP/1.1" 200 -
+2023-12-15 13:39:23,265 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 13:39:23,387 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 13:39:24,209 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 13:39:24,211 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 13:48:12,826 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 13:48:12,948 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 13:48:14,097 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 13:48:14,099 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 13:49:31,827 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:49:31] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:49:57,704 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:49:57] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:49:58,968 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:49:58] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:50:00,909 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:50:00] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:50:01,433 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:50:01] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:50:09,374 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:50:09] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:50:10,404 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:50:10] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:50:23,040 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:50:23] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:50:24,204 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:50:24] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:50:24,437 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:50:24] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:50:24,654 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:50:24] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:50:24,885 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:50:24] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:50:25,119 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:50:25] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:50:25,350 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:50:25] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:50:25,553 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:50:25] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:50:49,681 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:50:49] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:50:50,529 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:50:50] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:50:50,779 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:50:50] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:51:23,915 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:51:23] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:51:54,785 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:51:54] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:51:57,719 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:51:57] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:51:58,550 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:51:58] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:52:39,262 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:52:39] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:53:26,785 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:53:26] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:55:06,717 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:55:06] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:55:24,994 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:55:24] "[35m[1mGET /bankaccounts HTTP/1.1[0m" 500 -
+2023-12-15 13:55:25,375 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:55:25] "GET /bankaccounts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-12-15 13:55:25,390 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:55:25] "GET /bankaccounts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-12-15 13:55:25,582 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:55:25] "GET /bankaccounts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-12-15 13:55:25,720 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:55:25] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 13:55:37,505 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:55:37] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:57:44,236 INFO werkzeug Thread-35 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 13:57:44] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 13:59:53,237 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 13:59:53,372 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 13:59:54,311 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 13:59:54,312 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 14:02:31,537 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 14:02:31,659 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 14:02:32,553 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 14:02:32,555 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 14:02:32,612 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:02:32] "[35m[1mGET /bankaccounts HTTP/1.1[0m" 500 -
+2023-12-15 14:02:32,663 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:02:32] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 14:02:32,941 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:02:32] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 14:02:33,269 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:02:33] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 14:02:33,534 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:02:33] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 14:03:25,614 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:03:25] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:03:42,780 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:03:42] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:03:59,615 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:03:59] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 14:03:59,928 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:03:59] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:04:51,844 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:04:51] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:05:03,675 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:05:03] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:05:04,281 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:05:04] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:05:25,089 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:05:25] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:05:31,125 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:05:31] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:06:07,175 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:06:07] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:06:14,178 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:06:14] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:08:49,641 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 14:08:49,820 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 14:08:50,801 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 14:08:50,802 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 14:08:50,850 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:08:50] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:09:22,872 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:09:22] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:09:24,685 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:09:24] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:09:56,586 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:09:56] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:10:26,749 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:10:26] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:20:10,366 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 14:20:10,497 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 14:20:11,333 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 14:20:11,335 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 14:23:54,325 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 14:23:54,474 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 14:23:55,396 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 14:23:55,398 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 14:34:23,000 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:34:23] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:34:41,595 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:34:41] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 14:34:41,917 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:34:41] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:41:35,852 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 14:41:35,984 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 14:41:36,845 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 14:41:36,847 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 14:43:36,924 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 14:43:37,042 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 14:43:37,908 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 14:43:37,910 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 14:44:32,366 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 14:44:32,492 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 14:44:33,362 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 14:44:33,363 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 14:44:33,460 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:44:33] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:44:37,400 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:44:37] "POST /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:44:40,671 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:44:40] "POST /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:44:57,105 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 14:44:57,233 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 14:44:58,080 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 14:44:58,083 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 14:44:58,132 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:44:58] "POST /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:44:58,653 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:44:58] "POST /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:51:26,122 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 14:51:26,260 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 14:51:27,247 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 14:51:27,249 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 14:51:27,315 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:51:27] "POST /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:51:38,626 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 14:51:38,837 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 14:51:39,729 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 14:51:39,730 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 14:51:41,754 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:51:41] "POST /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:51:49,056 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 14:51:49,178 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 14:51:49,988 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 14:51:49,990 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 14:51:52,651 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:51:52] "POST /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:51:55,003 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:51:55] "POST /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:52:17,792 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 14:52:17,934 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 14:52:18,788 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 14:52:18,789 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 14:52:18,844 ERROR app Thread-2 (process_request_thread) : Class 'builtins.str' is not mapped
+2023-12-15 14:52:18,844 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:52:18] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 14:52:18,862 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:52:18] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:52:19,387 ERROR app Thread-4 (process_request_thread) : Class 'builtins.str' is not mapped
+2023-12-15 14:52:19,388 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:52:19] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 14:52:19,653 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:52:19] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:52:33,292 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 14:52:33,429 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 14:52:34,203 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 14:52:34,204 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 14:52:35,242 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:52:35] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:52:35,857 ERROR app Thread-3 (process_request_thread) : Class 'builtins.str' is not mapped
+2023-12-15 14:52:35,858 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:52:35] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 14:52:36,182 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:52:36] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:53:12,877 ERROR app Thread-5 (process_request_thread) : Class 'builtins.str' is not mapped
+2023-12-15 14:53:12,878 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:53:12] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 14:53:13,197 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:53:13] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:54:03,557 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 14:54:03,693 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 14:54:04,524 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 14:54:04,526 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 14:54:04,645 ERROR app Thread-2 (process_request_thread) : Class 'builtins.str' is not mapped
+2023-12-15 14:54:04,646 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:54:04] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 14:54:04,873 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:54:04] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:58:00,683 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 14:58:00,813 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 14:58:01,742 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 14:58:01,744 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 14:58:01,839 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:58:01] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:58:16,458 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:58:16] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:58:18,029 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:58:18] "POST /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:58:58,640 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:58:58] "POST /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:59:00,131 ERROR app Thread-6 (process_request_thread) : Query.filter_by() takes 1 positional argument but 2 were given
+2023-12-15 14:59:00,132 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:59:00] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 14:59:00,393 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:59:00] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:59:38,441 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 14:59:38,578 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 14:59:39,425 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 14:59:39,427 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 14:59:40,064 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:59:40] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 14:59:40,306 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 14:59:40] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 14:59:55,887 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 14:59:56,012 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 14:59:56,827 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 14:59:56,829 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 15:00:10,066 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:00:10] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:00:10,290 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:00:10] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:00:25,474 ERROR app Thread-4 (process_request_thread) : (pymysql.err.IntegrityError) (1452, 'Cannot add or update a child row: a foreign key constraint fails (`etel`.`transaction`, CONSTRAINT `transaction_ibfk_1` FOREIGN KEY (`bank_account_id`) REFERENCES `bank_account` (`id`))')
+[SQL: UPDATE transaction SET bank_account_id=%(bank_account_id)s, updated_at=%(updated_at)s WHERE transaction.id = %(transaction_id)s]
+[parameters: [{'bank_account_id': None, 'updated_at': datetime.datetime(2023, 12, 15, 14, 59, 56, 789915), 'transaction_id': 13}, {'bank_account_id': None, 'updated_at': datetime.datetime(2023, 12, 15, 14, 59, 56, 789915), 'transaction_id': 14}, {'bank_account_id': None, 'updated_at': datetime.datetime(2023, 12, 15, 14, 59, 56, 789915), 'transaction_id': 15}, {'bank_account_id': None, 'updated_at': datetime.datetime(2023, 12, 15, 14, 59, 56, 789915), 'transaction_id': 16}, {'bank_account_id': None, 'updated_at': datetime.datetime(2023, 12, 15, 14, 59, 56, 789915), 'transaction_id': 17}, {'bank_account_id': None, 'updated_at': datetime.datetime(2023, 12, 15, 14, 59, 56, 789915), 'transaction_id': 18}, {'bank_account_id': None, 'updated_at': datetime.datetime(2023, 12, 15, 14, 59, 56, 789915), 'transaction_id': 19}, {'bank_account_id': None, 'updated_at': datetime.datetime(2023, 12, 15, 14, 59, 56, 789915), 'transaction_id': 20}  ... displaying 10 of 15 total bound parameter sets ...  {'bank_account_id': None, 'updated_at': datetime.datetime(2023, 12, 15, 14, 59, 56, 789915), 'transaction_id': 26}, {'bank_account_id': None, 'updated_at': datetime.datetime(2023, 12, 15, 14, 59, 56, 789915), 'transaction_id': 27}]]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2023-12-15 15:00:25,475 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:00:25] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:00:25,799 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:00:25] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:00:53,329 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 15:00:53,465 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 15:00:54,280 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 15:00:54,282 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 15:00:55,253 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:00:55] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:00:55,801 ERROR app Thread-3 (process_request_thread) : (pymysql.err.IntegrityError) (1452, 'Cannot add or update a child row: a foreign key constraint fails (`etel`.`transaction`, CONSTRAINT `transaction_ibfk_1` FOREIGN KEY (`bank_account_id`) REFERENCES `bank_account` (`id`))')
+[SQL: UPDATE transaction SET bank_account_id=%(bank_account_id)s, updated_at=%(updated_at)s WHERE transaction.id = %(transaction_id)s]
+[parameters: [{'bank_account_id': None, 'updated_at': datetime.datetime(2023, 12, 15, 15, 0, 54, 244302), 'transaction_id': 13}, {'bank_account_id': None, 'updated_at': datetime.datetime(2023, 12, 15, 15, 0, 54, 244302), 'transaction_id': 14}, {'bank_account_id': None, 'updated_at': datetime.datetime(2023, 12, 15, 15, 0, 54, 244302), 'transaction_id': 15}, {'bank_account_id': None, 'updated_at': datetime.datetime(2023, 12, 15, 15, 0, 54, 244302), 'transaction_id': 16}, {'bank_account_id': None, 'updated_at': datetime.datetime(2023, 12, 15, 15, 0, 54, 244302), 'transaction_id': 17}, {'bank_account_id': None, 'updated_at': datetime.datetime(2023, 12, 15, 15, 0, 54, 244302), 'transaction_id': 18}, {'bank_account_id': None, 'updated_at': datetime.datetime(2023, 12, 15, 15, 0, 54, 244302), 'transaction_id': 19}, {'bank_account_id': None, 'updated_at': datetime.datetime(2023, 12, 15, 15, 0, 54, 244302), 'transaction_id': 20}  ... displaying 10 of 15 total bound parameter sets ...  {'bank_account_id': None, 'updated_at': datetime.datetime(2023, 12, 15, 15, 0, 54, 244302), 'transaction_id': 26}, {'bank_account_id': None, 'updated_at': datetime.datetime(2023, 12, 15, 15, 0, 54, 244302), 'transaction_id': 27}]]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2023-12-15 15:00:55,802 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:00:55] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:00:56,116 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:00:56] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:12:10,662 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\models.py', reloading
+2023-12-15 15:12:10,799 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 15:12:11,586 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 15:12:11,587 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 15:14:32,534 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 15:14:32,657 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 15:14:33,583 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 15:14:33,585 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 15:14:33,771 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:14:33] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:14:58,258 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 15:14:58,378 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 15:14:59,193 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 15:14:59,194 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 15:15:16,860 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:15:16] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:15:33,608 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:15:33] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:15:33,925 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:15:33] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:17:23,486 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:23] "[35m[1mGET /bankaccounts HTTP/1.1[0m" 500 -
+2023-12-15 15:17:23,743 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:23] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 15:17:23,809 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:23] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 15:17:23,825 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:23] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 15:17:24,199 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:24] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 15:17:32,523 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:32] "[35m[1mGET /bankaccounts HTTP/1.1[0m" 500 -
+2023-12-15 15:17:32,861 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:32] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 15:17:32,861 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:32] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 15:17:33,128 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:33] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 15:17:33,189 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:33] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 15:17:35,449 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:35] "[35m[1mGET /bankaccounts HTTP/1.1[0m" 500 -
+2023-12-15 15:17:35,780 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:35] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 15:17:35,780 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:35] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 15:17:36,047 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:36] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 15:17:36,109 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:36] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 15:17:47,068 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:47] "[35m[1mGET /bankaccounts HTTP/1.1[0m" 500 -
+2023-12-15 15:17:47,418 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:47] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 15:17:47,418 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:47] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 15:17:47,680 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:47] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 15:17:47,743 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:47] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 15:17:57,257 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:57] "[35m[1mGET /bankaccounts HTTP/1.1[0m" 500 -
+2023-12-15 15:17:57,597 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:57] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 15:17:57,597 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:57] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 15:17:57,861 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:57] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 15:17:57,925 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:17:57] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 15:18:19,707 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:18:19] "[35m[1mGET /bankaccounts HTTP/1.1[0m" 500 -
+2023-12-15 15:18:20,048 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:18:20] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 15:18:20,049 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:18:20] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 15:18:20,312 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:18:20] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 15:18:20,376 INFO werkzeug Thread-35 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:18:20] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 15:18:46,374 INFO werkzeug Thread-36 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:18:46] "[35m[1mGET /bankaccounts HTTP/1.1[0m" 500 -
+2023-12-15 15:18:46,715 INFO werkzeug Thread-37 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:18:46] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 15:18:46,716 INFO werkzeug Thread-38 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:18:46] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 15:18:46,981 INFO werkzeug Thread-39 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:18:46] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 15:18:47,045 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:18:47] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 15:19:53,315 INFO werkzeug Thread-42 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:19:53] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:19:57,944 INFO werkzeug Thread-43 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:19:57] "[35m[1mGET /bankaccounts HTTP/1.1[0m" 500 -
+2023-12-15 15:19:58,274 INFO werkzeug Thread-44 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:19:58] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2023-12-15 15:19:58,275 INFO werkzeug Thread-45 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:19:58] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2023-12-15 15:19:58,536 INFO werkzeug Thread-46 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:19:58] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 15:19:58,600 INFO werkzeug Thread-47 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:19:58] "[36mGET /bankaccounts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-12-15 15:20:14,154 INFO werkzeug Thread-48 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:20:14] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:20:18,165 INFO werkzeug Thread-49 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:20:18] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:20:18,429 INFO werkzeug Thread-50 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:20:18] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:20:55,842 INFO werkzeug Thread-51 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:20:55] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:21:00,826 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:21:00] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:21:01,089 INFO werkzeug Thread-53 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:21:01] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:23:12,278 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 15:23:12,441 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 15:23:13,335 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 15:23:13,336 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 15:23:13,870 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:23:13] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:23:15,468 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:23:15] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:23:15,787 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:23:15] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:23:17,547 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:23:17] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:23:17,862 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:23:17] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:25:27,936 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 15:25:28,056 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 15:25:29,114 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 15:25:29,116 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 15:26:10,305 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 15:26:10,431 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 15:26:11,289 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 15:26:11,291 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 15:26:11,354 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:26:11] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:26:13,678 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:26:13] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:26:14,002 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:26:14] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:26:18,343 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:26:18] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:26:18,660 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:26:18] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:26:47,615 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:26:47] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:26:49,697 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:26:49] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:26:49,957 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:26:49] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:26:51,467 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:26:51] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:26:51,784 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:26:51] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:26:53,918 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:26:53] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:26:54,228 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:26:54] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:27:05,390 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:27:05] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:27:05,756 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 15:27:05,883 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 15:27:06,700 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 15:27:06,702 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 15:27:06,895 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:27:06] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:27:07,131 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:27:07] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:27:08,620 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:27:08] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:27:08,938 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:27:08] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:27:09,401 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:27:09] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:27:09,719 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:27:09] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:27:10,814 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:27:10] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:27:11,125 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:27:11] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:27:11,758 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:27:11] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:27:12,076 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:27:12] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:28:08,370 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:28:08] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:28:50,461 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:28:50] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:28:55,330 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:28:55] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:28:55,645 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:28:55] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:28:57,646 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:28:57] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:28:57,969 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:28:57] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:28:59,984 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:28:59] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:29:00,302 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:29:00] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:29:01,859 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:29:01] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:29:02,172 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:29:02] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:29:04,133 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:29:04] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:29:04,447 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:29:04] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:29:05,578 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:29:05] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:29:05,894 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:29:05] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:29:06,884 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:29:06] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:29:07,206 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:29:07] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:29:08,885 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:29:08] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:29:09,201 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:29:09] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:30:01,450 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 15:30:01,594 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 15:30:02,551 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 15:30:02,553 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 15:30:11,853 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 15:30:11,987 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 15:30:12,898 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 15:30:12,899 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 15:30:36,637 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\views.py', reloading
+2023-12-15 15:30:36,783 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 15:30:37,733 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 15:30:37,734 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 15:31:30,132 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\aba\\PycharmProjects\\eTel\\app\\methods.py', reloading
+2023-12-15 15:31:30,251 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-15 15:31:31,079 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-15 15:31:31,080 INFO werkzeug MainThread :  * Debugger PIN: 574-351-979
+2023-12-15 15:31:31,433 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:31:31] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:31:43,116 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:31:43] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:37:24,741 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:37:24] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:37:30,355 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:37:30] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:37:30,673 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:37:30] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:37:34,707 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:37:34] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:37:35,017 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:37:35] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:38:30,968 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:38:30] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:41:35,154 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:41:35] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:42:29,870 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:42:29] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:42:34,785 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:42:34] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:42:42,100 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:42:42] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:42:52,077 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:42:52] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:42:54,782 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:42:54] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:42:55,103 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:42:55] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:43:10,825 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:43:10] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:43:13,782 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:43:13] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:43:14,044 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:43:14] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:43:15,497 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:43:15] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:43:15,817 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:43:15] "GET /bankaccounts HTTP/1.1" 200 -
+2023-12-15 15:43:23,397 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:43:23] "[32mPOST /bankaccounts HTTP/1.1[0m" 302 -
+2023-12-15 15:43:23,718 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [15/Dec/2023 15:43:23] "GET /bankaccounts HTTP/1.1" 200 -
