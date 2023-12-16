@@ -2,48 +2,70 @@
 {% block content %}
 <!--suppress ALL -->
 
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Profil szerkesztése</h4>
+                        <form class="forms-sample" method="POST">
+                            <div class="row">
+                                <!-- Bal oldali oszlop: Személyes adatok -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="username">Felhasználónév:</label>
+                                        <input type="text" class="form-control" name="username" value="{{ user.username }}" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Jelszó:</label>
+                                        <input type="password" class="form-control" name="password" value="{{ user.password }}" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email:</label>
+                                        <input type="email" class="form-control" name="email" value="{{ user.email }}" required>
+                                    </div>
+                                </div>
 
+                                <!-- Jobb oldali oszlop: Cím adatok -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="country">Ország:</label>
+                                        <input type="text" class="form-control" name="country" value="{{ user.country }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="zipcode">Irányítószám:</label>
+                                        <input type="text" class="form-control" name="zipcode" value="{{ user.zipcode }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="city">Város:</label>
+                                        <input type="text" class="form-control" name="city" value="{{ user.city }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="address">Cím:</label>
+                                        <input type="text" class="form-control" name="address" value="{{ user.address }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Telefonszám:</label>
+                                        <input type="text" class="form-control" name="phone" value="{{ user.phone }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gender">Nem:</label>
+                                        <input type="text" class="form-control" name="gender" value="{{ user.gender }}">
+                                    </div>
+                                </div>
+                            </div>
 
+                            <!-- Mentés gomb -->
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary me-2">Mentés</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-
-
-
-
-
-<h2>Felhasználói Profil</h2>
-<form method="POST">
-    <label for="username">Felhasználónév:</label>
-    <input type="text" name="username" value="{{ user.username }}" required><br>
-
-    <label for="password">Jelszó:</label>
-    <input type="password" name="password" value="{{ user.password }}" required><br>
-
-    <label for="password2">Jelszó újra:</label>
-    <input type="password" name="password2" value="{{ user.password2 }}" required><br>
-
-    <label for="email">Email:</label>
-    <input type="email" name="email" value="{{ user.email }}" required><br>
-
-    <label for="country">Ország:</label>
-    <input type="text" name="country" value="{{ user.country }}"><br>
-
-    <label for="zipcode">Irányítószám:</label>
-    <input type="text" name="zipcode" value="{{ user.zipcode }}"><br>
-
-    <label for="city">Város:</label>
-    <input type="text" name="city" value="{{ user.city }}"><br>
-
-    <label for="address">Cím:</label>
-    <input type="text" name="address" value="{{ user.address }}"><br>
-
-    <label for="phone">Telefonszám:</label>
-    <input type="text" name="phone" value="{{ user.phone }}"><br>
-
-    <label for="gender">Nem:</label>
-    <input type="text" name="gender" value="{{ user.gender }}"><br>
-
-    <!-- Ide jöhetnek a többi mezők, mint aktív státusz, admin jogosultság, stb. -->
-
-    <input type="submit" value="Profil Frissítése">
-</form>
 {% endblock %}

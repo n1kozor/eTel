@@ -1,31 +1,141 @@
 {% extends "base.html" %}
-
-{% block title %}Kezdőlap{% endblock %}
+{% block title %}Tranzakciók{% endblock %}
 
 {% block content %}
-<h1>{{ current_user.username }} tranzakciók</h1>
-
-{% for bankaccounts in current_user.bank_accounts %}
-    {% if bankaccounts.is_active %}
-        <h2>Bank neve: {{ bankaccounts.bank_name }}</h2>
-        <p>Számlaszám: {{ bankaccounts.account_number }}</p>
-
-        <table>
-            <tr>
-                <th>Tranzakció típusa</th>
-                <th>Tranzakció összege</th>
-                <th>Tranzakció dátuma</th>
-            </tr>
-
-            {% for transaction in bankaccounts.transactions %}
-                <tr>
-                    <td>{{ transaction.transaction_type }}</td>
-                    <td>{{ transaction.description }}</td>
-                    <td>{{ transaction.amount }}</td>
-                    <td>{{ transaction.created_at }}</td>
-                </tr>
-            {% endfor %}
-        </table>
-    {% endif %}
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-lg-3 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Új Tranzakció Hozzáadása</h4>
+                        <form method="POST">
+                            <input type="hidden" name="add" value="1">
+                            <div class="form-group">
+                                <label for="bank_account_id">Bankfiók</label>
+                                <select name="bank_account_id" id="bank_account_id" class="form-control">
+                                    {% for bankaccount in current_user.bank_accounts %}
+                                        <option value="{{ bankaccount.id }}">{{ bankaccount.bank_name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="amount">Összeg</label>
+                                <input type="number" name="amount" class="form-control" placeholder="Összeg">
+                            </div>
+                            <div class="form-group">
+                                <label for="transaction_type">Tranzakció típusa</label>
+                                <select name="transaction_type" id="transaction_type" class="form-control">
+                                    <option value="withdrawal">Utalás</option>
+                                    <option value="deposit">Jóváírás</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Leírás</label>
+                                <input type="text" name="description" class="form-control" placeholder="Leírás">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Tranzakció Hozzáadása</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 grid-margin stretch-card" id="charts">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Egyenlegek Áttekintése</h4>
+                        <div id="balances_chart" style="height: 400px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% for bankaccount in current_user.bank_accounts %}
+        {% if bankaccount.is_active %}
+            <div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body d-flex justify-content-between">
+                <div>
+                    <h4 class="card-title" style="color: #007bff;">Bank neve: {{ bankaccount.bank_name }}</h4>
+                    <p><strong>Számlaszám:</strong> {{ bankaccount.account_number }}</p>
+                </div>
+                <div>
+                    <p style="font-size: 1.5em; color: #28a745;"><strong>Egyenleg:</strong> {{ bankaccount.balance }}</p>
+                </div>
+            </div>
+            <div class="card-body d-flex justify-content-between">
+                <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Tranzakció típusa</th>
+                            <th>Tranzakció leírása</th>
+                            <th>Tranzakció összege</th>
+                            <th>Tranzakció dátuma</th>
+                            <th>Egyenleg a tranzakció idejében</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for transaction in bankaccount.transactions %}
+                            <tr>
+                                <td>{{ 'Utalás' if transaction.transaction_type == 'withdrawal' else 'Bevétel' }}</td>
+                                <td>{{ transaction.description }}</td>
+                                <td>{{ transaction.amount }}</td>
+                                <td>{{ transaction.created_at }}</td>
+                                <td>{{ transaction.actual_balance }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
 {% endfor %}
+</div>
+</div>
+    <script>
+
+            Highcharts.chart('balances_chart', {
+                chart: {
+                    type: 'area',
+                    options3d: {
+                        enabled: true,
+                        alpha: 20,
+                        beta: 30,
+                        depth: 100
+                    }
+                },
+                title: {
+                    text: ''
+                },
+                yAxis: {
+                    title: {
+                        text: ''
+                    }
+                },
+                xAxis: [{
+                    visible: false
+                }, {
+                    visible: false
+                }, {
+                    visible: false
+                }],
+                plotOptions: {
+                    area: {
+                        depth: 100,
+                        marker: {
+                            enabled: false
+                        }
+                    }
+                },
+                tooltip: {
+                    valueSuffix: ' Egység'
+                },
+                series: {{ chart_series | tojson }}
+            });
+        </script>
 {% endblock %}
+
+

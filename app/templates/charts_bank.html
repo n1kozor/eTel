@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}Banki Diagramok{% endblock %}
+{% block content %}
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <!-- Tranzakciók Időbeli Alakulása Diagram -->
+            <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <div id="chart_transaction_time" style="height: 400px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <div id="chart_transaction_count" style="height: 400px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <div id="chart_income_expense" style="height: 400px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Tranzakciók Időbeli Alakulása
+    Highcharts.chart('chart_transaction_time', {
+        chart: {
+            type: 'spline',
+        },
+        title: {
+            text: 'Tranzakciók Időbeli Alakulása'
+        },
+        xAxis: {
+            categories: {{ chart_transaction_time[current_user.bank_accounts[0].id].dates | tojson | safe }}
+        },
+        yAxis: {
+            title: {
+                text: 'Tranzakciós összeg'
+            },
+            min: 0
+        },
+        series: [
+            {% for bank_account_id, data in chart_transaction_time.items() %}
+            {
+                name: '{{ data.bank_name }}',
+                data: {{ data.balances | tojson | safe }}
+            },
+            {% endfor %}
+        ]
+    });
+</script>
+    <script>
+    Highcharts.chart('chart_transaction_count', {
+        chart: {
+            type: 'column',
+        },
+        title: {
+            text: 'Tranzakciók száma Bankszámlánként'
+        },
+        xAxis: {
+            categories: Object.values({{ chart_transaction_count | tojson | safe }}).map(a => a.bank_name)
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Tranzakciók száma'
+            }
+        },
+        series: [{
+            name: 'Tranzakciók száma',
+            data: Object.values({{ chart_transaction_count | tojson | safe }}).map(a => a.transactions_count)
+        }]
+    });
+</script>
+
+    <script>
+    Highcharts.chart('chart_income_expense', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Bevételek és Kiadások Eloszlása számlánként'
+        },
+        xAxis: {
+            categories: Object.values({{ chart_income_expense | tojson | safe }}).map(a => a.bank_name)
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Összeg'
+            }
+        },
+        series: [{
+            name: 'Bevétel',
+            data: Object.values({{ chart_income_expense | tojson | safe }}).map(a => a.income)
+        }, {
+            name: 'Kiadás',
+            data: Object.values({{ chart_income_expense | tojson | safe }}).map(a => a.expense)
+        }]
+    });
+</script>
+
+{% endblock %}

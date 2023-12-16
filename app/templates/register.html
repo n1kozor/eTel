@@ -1,40 +1,80 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>eTel Registration</title>
+    <link rel="stylesheet" href="static/assets/vendors/feather/feather.css">
+    <link rel="stylesheet" href="static/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="static/assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="static/assets/vendors/typicons/typicons.css">
+    <link rel="stylesheet" href="static/assets/vendors/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="static/assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="static/assets/css/vertical-layout-light/style.css">
+    <link rel="shortcut icon" href="static/assets/images/favicon.png">
+</head>
+<body>
+    <div class="container-scroller">
+        <div class="container-fluid page-body-wrapper full-page-wrapper">
+            <div class="content-wrapper d-flex align-items-center auth px-0">
+                <div class="row w-100 mx-0">
+                    <div class="col-lg-6 mx-auto">
+                        <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+                            <div class="brand-logo">
+                                <img src="static/assets/images/house.png" alt="logo">
+                            </div>
+                            <h4>Regisztrálj most!</h4>
+                            <h6 class="fw-light">Töltsd ki az alábbi űrlapot a regisztrációhoz.</h6>
+                            <form class="pt-3" method="post">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" id="username" name="username" placeholder="Felhasználónév" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Jelszó" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" id="country" name="country" placeholder="Ország">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" id="zipcode" name="zipcode" placeholder="Irányítószám">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" id="city" name="city" placeholder="Város">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" id="address" name="address" placeholder="Cím">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" id="phone" name="phone" placeholder="Telefonszám">
+                                </div>
+                                <div class="form-group">
 
-{% block title %}Regisztráció{% endblock %}
-
-{% block content %}
-<h1>Regisztráció</h1>
-<form method="post">
-    <label for="username">Felhasználónév:</label>
-    <input type="text" id="username" name="username" required><br><br>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
-
-    <label for="password">Jelszó:</label>
-    <input type="password" id="password" name="password" required><br><br>
-
-    <label for="country">Ország:</label>
-    <input type="text" id="country" name="country"><br><br>
-
-    <label for="zipcode">Irányítószám:</label>
-    <input type="text" id="zipcode" name="zipcode"><br><br>
-
-    <label for="city">Város:</label>
-    <input type="text" id="city" name="city"><br><br>
-
-    <label for="address">Cím:</label>
-    <input type="text" id="address" name="address"><br><br>
-
-    <label for="phone">Telefonszám:</label>
-    <input type="text" id="phone" name="phone"><br><br>
-
-    <label for="gender">Nem:</label>
-    <input type="text" id="gender" name="gender"><br><br>
-
-
-    <input type="submit" value="Regisztráció">
-</form>
-
-
-{% endblock %}
+                                  <select class="form-select form-select-lg" aria-label="Default select example" id="cars" name="cars">
+                                    <option value="man">Férfi</option>
+                                    <option value="woman">Nö</option>
+                                    <option value="other">Más</option>
+                                    <option value="apache ">Apache helikopter</option>
+                                  </select>
+                                </div>
+                                <div class="mt-3">
+                                    <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Regisztráció</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="static/assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="static/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="static/assets/js/off-canvas.js"></script>
+    <script src="static/assets/js/hoverable-collapse.js"></script>
+    <script src="static/assets/js/template.js"></script>
+    <script src="static/assets/js/settings.js"></script>
+    <script src="static/assets/js/todolist.js"></script>
+</body>
+</html>
